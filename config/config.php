@@ -5,7 +5,7 @@
         if(!defined('HOSTNAME')) define("HOSTNAME", "localhost");
 
         //DBNAEM
-        if(!defined('DBNAME')) define("DBNAME", "realestate");
+        if(!defined('DBNAME')) define("DBNAME", "homeland");
 
         //user
         if(!defined('USER')) define("USER", "root");

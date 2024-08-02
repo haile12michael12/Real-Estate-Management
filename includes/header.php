@@ -1,9 +1,9 @@
 <?php 
 
   session_start();
-  define("APPURL", "http://localhost/realestate");
-  define("THUMBNAILMURL", "http://localhost/realestate/admin-panel/properties-admins/thumbnails");
-  define("GALLERYURL", "http://localhost/realestate/admin-panel/properties-admins/images");
+  define("APPURL", "http://localhost/homeland");
+  define("THUMBNAILMURL", "http://localhost/homeland/admin-panel/properties-admins/thumbnails");
+  define("GALLERYURL", "http://localhost/homeland/admin-panel/properties-admins/images");
 
   require dirname(dirname(__FILE__)) . "/config/config.php";
 
@@ -17,7 +17,7 @@
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>realestate &mdash; Colorlib Website Template</title>
+    <title>Homeland &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -60,7 +60,7 @@
         <div class="container py-1">
           <div class="row align-items-center">
             <div class="col-8 col-md-8 col-lg-4">
-              <h1 class="mb-0"><a href="<?php echo APPURL; ?>" class="text-white h2 mb-0"><strong>realestate<span class="text-danger">.</span></strong></a></h1>
+              <h1 class="mb-0"><a href="<?php echo APPURL; ?>" class="text-white h2 mb-0"><strong>Homeland<span class="text-danger">.</span></strong></a></h1>
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
