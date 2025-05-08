@@ -267,6 +267,82 @@ jQuery(document).ready(function($) {
 	};
 	siteDatePicker();
 
-	
+	// Property Image Preview
+	function previewImage(input) {
+	    if (input.files && input.files[0]) {
+	        const reader = new FileReader();
+	        reader.onload = function(e) {
+	            document.getElementById('imagePreview').src = e.target.result;
+	        }
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+
+	// Property Search
+	document.addEventListener('DOMContentLoaded', function() {
+	    const searchForm = document.getElementById('propertySearch');
+	    if (searchForm) {
+	        searchForm.addEventListener('submit', function(e) {
+	            e.preventDefault();
+	            const searchTerm = document.getElementById('searchTerm').value;
+	            const propertyType = document.getElementById('propertyType').value;
+	            const priceRange = document.getElementById('priceRange').value;
+	            
+	            // Add your search logic here
+	            console.log('Searching for:', { searchTerm, propertyType, priceRange });
+	        });
+	    }
+	});
+
+	// Admin Dashboard Charts
+	function initializeCharts() {
+	    // Property Statistics Chart
+	    const propertyStats = document.getElementById('propertyStats');
+	    if (propertyStats) {
+	        new Chart(propertyStats, {
+	            type: 'bar',
+	            data: {
+	                labels: ['For Sale', 'For Rent', 'Sold', 'Rented'],
+	                datasets: [{
+	                    label: 'Properties',
+	                    data: [12, 19, 3, 5],
+	                    backgroundColor: [
+	                        '#3498db',
+	                        '#2ecc71',
+	                        '#e74c3c',
+	                        '#f1c40f'
+	                    ]
+	                }]
+	            }
+	        });
+	    }
+	}
+
+	// Form Validation
+	function validatePropertyForm() {
+	    const form = document.getElementById('propertyForm');
+	    if (form) {
+	        form.addEventListener('submit', function(e) {
+	            e.preventDefault();
+	            
+	            const name = document.getElementById('name').value;
+	            const price = document.getElementById('price').value;
+	            const location = document.getElementById('location').value;
+	            
+	            if (!name || !price || !location) {
+	                alert('Please fill in all required fields');
+	                return;
+	            }
+	            
+	            form.submit();
+	        });
+	    }
+	}
+
+	// Initialize all functions when document is ready
+	document.addEventListener('DOMContentLoaded', function() {
+	    initializeCharts();
+	    validatePropertyForm();
+	});
 
 });

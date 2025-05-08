@@ -2,21 +2,42 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Admin extends Model
+class Admin extends Authenticatable
 {
-    protected $table = 'admins';
-    
+    use Notifiable;
+
+    protected $guard = 'admin';
+
     protected $fillable = [
-        'adminname',
+        'name',
         'email',
-        'mypassword'
+        'password',
+        'role',
+        'status',
     ];
 
     protected $hidden = [
-        'mypassword'
+        'password',
+        'remember_token',
     ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'status' => 'boolean',
+    ];
+
+    public function isActive()
+    {
+        return $this->status;
+    }
+
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
 
     public function properties()
     {
